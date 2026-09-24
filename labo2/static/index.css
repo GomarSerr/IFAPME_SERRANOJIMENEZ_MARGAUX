@@ -1,0 +1,31 @@
+
+/* Section index */
+
+.buttons a {
+  width: 50px;           /* Largeur du rond */
+  height: 50px;          /* Hauteur identique pour faire un cercle */
+  background-color: lavender; /* Couleur de fond du rond */
+  border-radius: 50%;     /* Transforme le carré en cercle parfait */
+  display: flex;          /* Centre le logo à l'intérieur */
+  align-items: center;    /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal */
+}
+
+.buttons {
+    display: flex; 
+    gap: 15px; /* espace entre les boutons */
+}
+
+/* Section compétences */
+
+.check,
+.en_constru {
+  width: 50px; /* largeur */
+  height: 50px; /* hauteur */
+}
+
+/* Section Expériences */
+
+ol {
+  list-style-type: none;  /*enlève les puces devant la liste */
+}

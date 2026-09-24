@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block titre %} Portfolio de Margaux {% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class="leftlogo">
+                <h2>2026-2027</h2>
+            </div>
+            <ul class="navlinks">
+                <li> <a href="/">Accueil</a></li>
+                <li> <a href="/competences">Compétences</a></li>
+                <li> <a href="/experiences">Expériences</a></li>
+                <li> <a href="/apropos">A propos</a></li>
+            </ul>
+        </nav>
+        {%block contenu%}
+        {%endblock%}
+
+    </body>
+</html>
