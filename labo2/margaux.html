@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Margaux - UI/UX Designer | MME Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/margaux.css" />
+  </head>
+
+  <body>
+    <!--Navigation bar-->
+
+    <nav class="navbar">
+      <div class="logo">
+        <h2>MME Collective</h2>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#presentation">Presentation</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- section presentation -->
+    <header>
+      <div class="presentation">
+        <div class="texte-presentation">
+          <h1 class="bonjour">
+            <span class="hi">Hi !</span>
+            <span class="name">I'm Margaux.</span>
+          </h1>
+          <div class="job-name">
+            <h3 class="job">Web designer & digital creative.</h3>
+          </div>
+          <p class="description">
+            I craft clean, modern and user focused websites.<br />
+            Designing Mat's enginious structures and Ethan's productions.
+          </p>
+        </div>
+        <div class="photo">
+          <img
+            class="image"
+            src="public/ui-uxdesigner.jpg"
+            alt="Margaux - UI/UX Designer"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- section skills -->
+    <section class="skills">
+      <h4>Skills</h4>
+      <div class="boxes">
+        <div class="boxes-colonnes">
+          <div class="box">
+            <div class="info-skills">
+              <label for="design">UI/UX Design</label>
+            </div>
+            <div class="progress-wrapper">
+              <!--Ajout pour que box ait 2enfant au lieu de 3-->
+              <div class="progress-bar">
+                <div class="fill" style="width: 95%"></div>
+              </div>
+              <span class="pourcentage">95%</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="info-skills">
+              <label for="develop">Web development</label>
+            </div>
+            <div class="progress-wrapper">
+              <div class="progress-bar">
+                <div class="fill" style="width: 90%"></div>
+              </div>
+              <span class="pourcentage">90%</span>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="info-skills">
+              <label for="responsive">Responsive design</label>
+            </div>
+            <div class="progress-wrapper">
+              <div class="progress-bar">
+                <div class="fill" style="width: 90%"></div>
+              </div>
+              <span class="pourcentage">90%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-skills">
+          <p>
+            I design and built digital experiences that <br />
+            are not only beautiful but also functional <br />
+            and intuitive.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- section contact -->
+    <section class="contact">
+      <h4>Contact us</h4>
+      <div class="contact-buttons">
+        <button
+          class="e-mailbutton"
+          type="button"
+          aria-label="Envoyer un e-mail"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 13l8-6.99V6H4zm16 2.24l-7.4 6.47a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24z"
+            />
+          </svg>
+        </button>
+
+        <button
+          class="websitebutton"
+          type="button"
+          aria-label="Visiter le site"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm7.94 9h-3.02c-.14-2.35-.7-4.42-1.51-5.94A8.01 8.01 0 0 1 19.94 11zM12 4c.83 1.18 1.83 3.42 2.02 7H9.98c.19-3.58 1.19-5.82 2.02-7zM9.98 13h4.04c-.19 3.58-1.19 5.82-2.02 7-.83-1.18-1.83-3.42-2.02-7zM8.6 5.06C7.79 6.58 7.23 8.65 7.09 11H4.06a8.01 8.01 0 0 1 4.54-5.94zM4.06 13h3.02c.14 2.35.7 4.42 1.51 5.94A8.01 8.01 0 0 1 4.06 13zm10.83 5.94c.81-1.52 1.37-3.59 1.51-5.94h3.02a8.01 8.01 0 0 1-4.54 5.94z"
+            />
+          </svg>
+        </button>
+
+        <button class="phonenumberbutton" type="button" aria-label:="Appeler">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"
+            />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <footer>
+      <p>© MME Collective — Designed & Managed by Margaux, Mats & Ethan</p>
+    </footer>
+  </body>
+</html>
