@@ -1,3 +1,11 @@
+:root {   /* Palette couleurs */
+  --lila-clair: rgb(223,214,239, 0.7);  /* (couleur,couleur,couleur, transparence) */
+  --lila: rgb(190,172,223, 0.5);
+  --lila-foncé: rgb(158,131,207, 0.5);
+  --lila-trèsfoncé: rgb(125,89,191, 0.5);
+  --lila-trèstrèsfoncé++: rgb(93,48,175, 0.5);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,23 +16,30 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Raleway',sans sherif;
+}
 section {
+  background-color: var(--lila-clair);
   height: 100vh; /* chaque section prend toute la hauteur de l'écran */
   scroll-snap-align: start; /* le haut de la section s'aligne avec le haut de l'écran */
-  display: flex;
+  display: flex; /* Affichage */
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; 
 }
 
 header {
+  background-color: var(--lila-clair);
   height: 100vh;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 h3 {
   writing-mode: sideways-lr;
+  font-size: 3.25rem;
 }
 
 /* Head et navbar */
@@ -33,15 +48,28 @@ ul {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 1rem;
-  list-style: none;
-  
+  gap: 1rem;   /* Ecart entre les items */
+  list-style: none; 
+  align-items: center; 
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border: 2px var(--lila);
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin: 16px;
 }
 
 
-
-
 /* Section index */
+
+.reseaux,
+.contact {
+  background-color: var(--lila-clair)
+}
 
 .buttons a {
   width: 50px;           /* Largeur du rond */
@@ -60,6 +88,10 @@ ul {
 
 /* Section compétences */
 
+.page-competences {
+  background-color: var(--lila-foncé);
+}
+
 .check,
 .en_constru {
   width: 50px; /* largeur */
@@ -67,6 +99,7 @@ ul {
 }
 
 /* Section Expériences */
+
 
 ol {
   list-style-type: none;  /*enlève les puces devant la liste */
