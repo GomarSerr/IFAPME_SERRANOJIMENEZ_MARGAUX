@@ -1,3 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh; /* chaque section prend toute la hauteur de l'écran */
+  scroll-snap-align: start; /* le haut de la section s'aligne avec le haut de l'écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+h3 {
+  writing-mode: sideways-lr;
+}
+
+/* Head et navbar */
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  
+}
+
+
+
 
 /* Section index */
 
