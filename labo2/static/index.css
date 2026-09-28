@@ -175,16 +175,35 @@ header {
   
 }
 
-.box {
+.html,
+.css,
+.python,
+.javascript {
   display: grid;
   width: 10%;
-  height: 25%;
+  height: 50%;
   background-color: white;
+  opacity: 0.8;
   border-radius: 10px;
-  box-shadow: 0 4px 6px;
+  box-shadow: 0 4px 6px var(--lila-trèsfoncé);
+  justify-items: center;
+  align-items: center;
+}
+
+.html,
+.python {
+  position: absolute;
   left:30%;
   top: 10%;
 }
+.css,
+.javascript {
+  position: absolute;
+  left:60%;
+  top: 10%;
+}
+
+
 
 .section-acquis,
 .section-en-construction {
