@@ -11,7 +11,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;  /* quand on prend la largeur, avec le padding */
 }
 
 html {
@@ -27,6 +27,7 @@ h3 {
   writing-mode: sideways-lr;   /*ecriture à la verticale */
   font-size: 3.25rem;
   margin-left: 8rem;
+  text-align: center;
 }
 
 h2 {
@@ -41,40 +42,43 @@ a {
   text-decoration: none;
 }
 
-ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;   /* Ecart entre les items */
-  list-style: none; /* Enleve les puces de la liste */
-  align-items: center; /* Centrage vertical */
-  padding: 2% 0%;
-  justify-content: right;
-  color: var(--lila-trèstrèsfoncé)
-  }
-
 .navbar {
-  justify-content: left;
+  display: flex;
   gap: 50px;
-  padding: 0.5%;
+  padding: 1% 1.5%;
   justify-content: space-between;
   font-size: 1.2rem;
   color: var(--lila-trèstrèsfoncé)
 }
+ul {
+  display: flex; /* s'aligne sur l'axe horizontal */
+  gap: 2.5rem;   /* Ecart entre les items */
+  list-style: none; /* Enleve les puces de la liste */
+  justify-content: right; /* alignement horizontal */
+  color: var(--lila-trèstrèsfoncé);
+  align-items: start;
+  }
+
+  .leftlogo {
+    display: flex;
+    justify-content: left;
+    align-items: start;
+  }
+
 
 /* Index */
 
 header {
-  height: 83vh;  /* hauteur de la box dans laquelle le header est */
-  scroll-snap-align: start;
+  height: 100vh;  /* hauteur de la box dans laquelle le header est */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* aligne le flex en colonne */
   justify-content: center;
   margin-top: -5rem;
 }
 
 .name {
   font-size: 7rem;
-  margin-left: 8.5rem;
+  margin-left: 15rem;
   color: var(--lila-trèstrèsfoncé);
 }
 
@@ -85,12 +89,28 @@ header {
 
 .titre2 {
   font-size: 1.5rem;
-  margin-left: 29rem;
+  margin-left: 35rem;
   color: black;
   font-weight: bold;
   font-style: italic;
 }
 
+.letsgobtn {
+  position: relative; 
+  left: 70%;
+  top: 15%;
+  display: flex;
+  height: 10%;
+  width: 10%;
+  padding: 10px;
+  background-color: var(--lila-trèstrèsfoncé);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--lila);
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
 
 .buttons-reseaux a,
 .buttons-contact a {
@@ -98,7 +118,7 @@ header {
   height: 120px;          /* Hauteur identique pour faire un cercle */
   background-color: var(--lila-trèstrèsfoncé); /* Couleur de fond du rond */
   border-radius: 50%;     /* Transforme le carré en cercle parfait */
-  display: flex;          /* Centre le logo à l'intérieur */
+  display: flex;          /* Aligne sur l'axe hroizontal */
   align-items: center;    /* Centrage vertical du logo*/
   justify-content: center;/* Centrage horizontal du logo */
   box-shadow: 0 4px 6px var(--lila-foncé); 
@@ -107,7 +127,7 @@ header {
 .buttons-reseaux {
   display: flex; 
   gap: 10%; /* espace entre les boutons */
-  width: 30%; /* largeur de la box */
+  width: 35rem; /* largeur de la box */
   padding:10px; /* contour */
   background-color: white;
   border-radius: 10px;  /*arrondi des coins de la box */
@@ -115,13 +135,13 @@ header {
   justify-content: center;
   position: absolute; /* empile le bouton sur les autres bloc de la page */
   left: 39%;
-  top: 13%;
+  top: 25%;
 }
 
 .buttons-contact {
   display: flex; 
   gap: 10%; 
-  width: 30%;
+  width: 25rem;
   padding: 10px;
   background-color: white;
   border-radius: 10px; 
@@ -136,8 +156,12 @@ header {
 .section-contact {
   position: relative; /*Permet de changer les sections sans bouger le reste*/
   display: flex;
-  min-height: 45vh;
+  min-height: 50vh;
   align-items: center;
+}
+
+.section-reseaux-contact {
+  height: 100vh;
 }
 
 .buttons-reseaux svg,
@@ -146,33 +170,22 @@ header {
   height: 70%;
 }
 
-.letsgobtn {
-  position: relative;
-  left: 70%;
-  top: 15%;
-  display: flex;
-  height: 10%;
-  width: 10%;
-  padding: 10px;
-  background-color: var(--lila-trèstrèsfoncé);
-  color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px var(--lila);
-  justify-content: center;
-  font-size: 1.5rem;
-}
+
 
 /* Section compétences */
 
-.page-competences {
-  background-color: var(--lila-foncé);
+.section-acquis,
+.section-en-construction {
+  position: relative; /*Permet de changer les sections sans bouger le reste*/
+  display: flex;
+  min-height: 50vh;
+  align-items: center;
 }
 
 .check,
 .en_constru {
   width: 80px; /* largeur */
   height: 80px; /* hauteur */
-  
 }
 
 .html,
@@ -180,38 +193,43 @@ header {
 .python,
 .javascript {
   display: grid;
-  width: 10%;
-  height: 50%;
   background-color: white;
   opacity: 0.8;
   border-radius: 10px;
   box-shadow: 0 4px 6px var(--lila-trèsfoncé);
-  justify-items: center;
+  justify-content: center;
   align-items: center;
+  width: 15%;
+  height: 55%;
 }
 
 .html,
 .python {
-  position: absolute;
+  position: absolute;    /*postition de la boite dans la section*/
   left:30%;
-  top: 10%;
+  top:25%;
 }
+
 .css,
 .javascript {
   position: absolute;
   left:60%;
-  top: 10%;
+  top: 25%;
 }
 
-
-
-.section-acquis,
-.section-en-construction {
-  position: relative; /*Permet de changer les sections sans bouger le reste*/
-  display: flex;
-  min-height: 45vh;
-  align-items: center;
+.titre_competence_html,
+.titre_competence_css,
+.titre_competence_python,
+.titre_competence_javascript {
+  font-size: 1rem;
+  justify-self: center;
+  align-items: start;
 }
+
+.competences_en_construction {
+  margin-left: -75px;
+}
+
 
 /* Section Expériences */
 
