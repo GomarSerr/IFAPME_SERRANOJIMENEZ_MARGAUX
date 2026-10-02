@@ -21,6 +21,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(to bottom right, white, var(--lila-foncé));
+  height: 100%;
 }
 
 h3 {
@@ -50,7 +51,7 @@ a {
   font-size: 1.2rem;
   color: var(--lila-trèstrèsfoncé)
 }
-ul {
+.navlinks {
   display: flex; /* s'aligne sur l'axe horizontal */
   gap: 2.5rem;   /* Ecart entre les items */
   list-style: none; /* Enleve les puces de la liste */
@@ -178,14 +179,17 @@ header {
 .section-en-construction {
   position: relative; /*Permet de changer les sections sans bouger le reste*/
   display: flex;
-  min-height: 50vh;
   align-items: center;
 }
 
-.check,
 .en_constru {
   width: 80px; /* largeur */
   height: 80px; /* hauteur */
+}
+
+.check {
+  width: 130px; 
+  height: 130px; 
 }
 
 .html,
@@ -193,14 +197,16 @@ header {
 .python,
 .javascript {
   display: grid;
+  grid-column: 1fr; /* une seule colonne */
+  grid-row: 1fr;    /* une seule ligne */
+  justify-items: center; /* centre le contenu horizontalement */
+  align-items: center;   /* centre le contenu verticalement */
   background-color: white;
   opacity: 0.8;
   border-radius: 10px;
   box-shadow: 0 4px 6px var(--lila-trèsfoncé);
-  justify-content: center;
-  align-items: center;
-  width: 15%;
-  height: 55%;
+  width: 13%;
+  height: 65%;
 }
 
 .html,
@@ -221,9 +227,8 @@ header {
 .titre_competence_css,
 .titre_competence_python,
 .titre_competence_javascript {
-  font-size: 1rem;
+  font-size: 1.35rem;
   justify-self: center;
-  align-items: start;
 }
 
 .competences_en_construction {
@@ -231,32 +236,154 @@ header {
 }
 
 
+
 /* Section Expériences */
 
+.jobs,
+.stages {
+  Position: relative;
+  justify-content: space-between;
+  display: flex;
+  height: 30vh;
+}
+  /* Timeline */
+.timeline-jobs {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+  position: relative;
+}
 
-ol {
-  list-style-type: none;  /*enlève les puces devant la liste */
+.timeline-jobs::before {
+  content: "";
+  position: absolute;
+  top: 46px;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background-color: var(--lila-trèstrèsfoncé);
+}
+
+.timeline-items {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.timeline-dots {
+  width: 14px;
+  height: 14px;
+  background: var(--lila-trèstrèsfoncé);
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 2px black;
+}
+
+.date {
+  font-weight: 700;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.profession {
+  font-weight: 700;
+  color: black;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+  /* Stages */
+
+.contenu-stages {
+  width: 1200px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 
 /* A propos */
 
+.section-apropos {
+  display: grid;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.personnalite {
+  Display:flex;
+  justify-content: space-between;
+}
+
+.liste-personnalite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  font-size: 1.2rem;
+}
+
 .sport {
-  height: 10px;
-  width: 50px;
+  width: 100px;
+  height: 100px;
 }
-
-.livres {
-  height: 10px;
-  width: 50px;
+.lecture {
+  width: 100px;
+  height: 100px;
 }
-
 .jeux-videos {
-  height: 10px;
-  width: 50px;
+  width: 100px;
+  height: 100px;
 }
 
-.boxes-interets {
-  display: flex; 
-  gap: 15px; /* espace entre les boutons */
+.motivations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  font-size: 1.2rem;
+  max-width: 100%;
+}
+
+.boxes-maniere-de-fonctionner {
+  display: flex;
+  justify-content: space-evenly;
+}
+.texte-motivations {
+  display: flex;
+  white-space: pre; /*Garde les sauts de ligne de l'html*/
+}
+
+.maniere-de-fonctionner {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  font-size: 1.2rem;
+  max-width: 100%;
+
+
+}
+
+.entretien,
+.plan,
+.premier-jet,
+.modifications,
+.finalisation {
+  display: flex;
+  justify-items: center; /* centre le contenu horizontalement */
+  align-items: center;   /* centre le contenu verticalement */
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--lila-trèsfoncé);
+  width: 13%;
+  height: 65%;
 }
