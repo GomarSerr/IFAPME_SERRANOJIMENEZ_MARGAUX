@@ -32,8 +32,9 @@ h3 {
 }
 
 h2 {
+  display:flex;
   font-size: 3rem;
-  justify-self: center;
+  justify-content: center;
   padding: 5%;
 }
 
@@ -131,6 +132,7 @@ header {
   width: 35rem; /* largeur de la box */
   padding:10px; /* contour */
   background-color: white;
+  opacity: 0.8;
   border-radius: 10px;  /*arrondi des coins de la box */
   box-shadow: 0 4px 6px var(--lila-foncé);
   justify-content: center;
@@ -145,6 +147,7 @@ header {
   width: 25rem;
   padding: 10px;
   background-color: white;
+  opacity: 0.8;
   border-radius: 10px; 
   box-shadow: 0 4px 6px var(--lila-foncé);
   justify-content: center;
@@ -171,20 +174,44 @@ header {
   height: 70%;
 }
 
-
-
 /* Section compétences */
+
+.section-competences {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.titre-en-constru {
+  margin-left: 3.5rem;
+}
+
+.competence {
+  display:grid;
+  justify-items: center; /* centre le contenu horizontalement */
+  align-items: center;   /* centre le contenu verticalement */
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--lila-trèsfoncé);  
+  width: 160px;
+  height: 190px;
+}
+
+.boxes-competences {
+  display: flex;
+  flex: 1;        /* pour que les cases occupent le même espace dans l'espace qu'il y a */
+  justify-content: center;
+  flex-direction: row;   /* une case à côté de l'autre */
+  gap: 100px;
+
+}
 
 .section-acquis,
 .section-en-construction {
-  position: relative; /*Permet de changer les sections sans bouger le reste*/
   display: flex;
   align-items: center;
-}
-
-.en_constru {
-  width: 80px; /* largeur */
-  height: 80px; /* hauteur */
 }
 
 .check {
@@ -192,109 +219,86 @@ header {
   height: 130px; 
 }
 
-.html,
-.css,
-.python,
-.javascript {
+/* Section Expériences */
+
+
+.section-experiences {
   display: grid;
-  grid-column: 1fr; /* une seule colonne */
-  grid-row: 1fr;    /* une seule ligne */
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.section-jobs,
+.section-stages {
+  Display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+
+.jobs {
+  display: grid;
+  grid-template-columns: 1fr; /* une seule colonne */
+  grid-template-rows: 0.5fr 0.65fr 1fr;
   justify-items: center; /* centre le contenu horizontalement */
   align-items: center;   /* centre le contenu verticalement */
   background-color: white;
   opacity: 0.8;
   border-radius: 10px;
   box-shadow: 0 4px 6px var(--lila-trèsfoncé);
-  width: 13%;
-  height: 65%;
-}
-
-.html,
-.python {
-  position: absolute;    /*postition de la boite dans la section*/
-  left:30%;
-  top:25%;
-}
-
-.css,
-.javascript {
-  position: absolute;
-  left:60%;
-  top: 25%;
-}
-
-.titre_competence_html,
-.titre_competence_css,
-.titre_competence_python,
-.titre_competence_javascript {
-  font-size: 1.35rem;
-  justify-self: center;
-}
-
-.competences_en_construction {
-  margin-left: -75px;
-}
-
-
-
-/* Section Expériences */
-
-.jobs,
-.stages {
-  Position: relative;
-  justify-content: space-between;
-  display: flex;
-  height: 30vh;
-}
-  /* Timeline */
-.timeline-jobs {
-  width: 1200px;
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 20px;
-  position: relative;
-}
-
-.timeline-jobs::before {
-  content: "";
-  position: absolute;
-  top: 46px;
-  left: 40px;
-  right: 40px;
-  height: 2px;
-  background-color: var(--lila-trèstrèsfoncé);
-}
-
-.timeline-items {
-  position: relative;
-  z-index: 1;
+  flex: 0 0 100%;                  /* une seule étape visible à la fois */
+  scroll-snap-align: center;
+  box-sizing: border-box;
+  padding: 20px;
   text-align: center;
-  flex: 1;
-  padding: 0 10px;
 }
 
-.timeline-dots {
-  width: 14px;
-  height: 14px;
-  background: var(--lila-trèstrèsfoncé);
-  border-radius: 50%;
-  margin: 0 auto 15px;
-  border: 4px solid #fff;
-  box-shadow: 0 0 0 2px black;
+.boxes-jobs {
+  display: flex;
+  margin: 0 auto;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 450px;
+  height: 300px;
+  border: 2px solid var(--lila-trèsfoncé);
+  border-radius: 16px;
+  overflow-x: auto;
+  scroll-snap-type: X mandatory;
+  scroll-behavior: smooth;
 }
 
-.date {
-  font-weight: 700;
-  color: black;
-  margin-bottom: 5px;
+.boxes-jobs::-webkit-scrollbar {
+  width: 20px;
+  height: 20px; 
 }
 
-.profession {
-  font-weight: 700;
-  color: black;
-  margin-bottom: 5px;
-  line-height: 1.5;
+.boxes-jobs::-webkit-scrollbar-thumb {
+  background-color: var(--lila-trèstrèsfoncé);
+  border-radius: 10px;
 }
+
+.boxes-jobs::-webkit-scrollbar-track {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.point {
+  justify-self: left;
+  font-size: 4rem;
+}
+
+.année {
+  justify-self: center;
+  margin: 0.5rem;
+  text-decoration: dotted underline;
+  font-size: 2rem;
+}
+
+.poste {
+  justify-self: center;
+  font-size: 1.2rem;
+}
+
 
   /* Stages */
 
@@ -314,76 +318,171 @@ header {
 .section-apropos {
   display: grid;
   justify-content: space-between;
-  gap: 50px;
+  gap: 100px;
 }
 
-.personnalite {
+.personnalite,
+.interets,
+.motivations,
+.maniere-de-fonctionner {
   Display:flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 100px;
 }
 
 .liste-personnalite {
-  display: flex;
+  display: block;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
-  gap: 100px;
   font-size: 1.2rem;
 }
 
-.sport {
-  width: 100px;
-  height: 100px;
+.liste-personnalite li {
+  margin-left: calc(var(--i) * 5rem);
+
 }
-.lecture {
-  width: 100px;
-  height: 100px;
+
+.liste-personnalite li::marker {
+  color: var(--lila-trèstrèsfoncé);
+  font-size: 2rem;
 }
+
+.interet-btn {
+  width: 2rem;
+  height: 2rem;
+  position:absolute;
+  bottom: -8px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--lila-trèsfoncé);
+  color: white;
+  border-radius: 7rem;
+  cursor: pointer;
+}
+
+.sport,
+.livres,
 .jeux-videos {
   width: 100px;
   height: 100px;
+  position: relative;
+}
+
+.svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxes-interets {
+  display: flex; 
+  margin: 0 auto;
+  gap: 10%; /* espace entre les boutons */
+  width: 35rem; /* largeur de la box */
+  padding:10px; /* contour */
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 10px;  /*arrondi des coins de la box */
+  box-shadow: 0 4px 6px var(--lila-foncé);
+  justify-content: center;
+}
+
+.details {       /* cadre invisible: style et position */
+  width: 20rem;
+  padding: 1.5rem;
+  background: white;
+  opacity: 0.8;
+  border: 2px solid var(--lila-foncé);
+  border-radius: 16px;
+  margin: 0;                         /* retire le centrage par défaut du popover */
+  inset: auto;                       /* = top+right+bottom+left */
+  position-area: bottom center;             /* centré horizontalement, juste sous le logo */
+  margin-top: 1.5rem;                /* petit espace entre le logo et le cadre */
+  position-try-fallbacks: flip-block; /* passe au-dessus s'il n'y a pas la place en dessous */
+}
+.titre-interets {
+  font-size: 2rem;
 }
 
 .motivations {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  font-size: 1.2rem;
-  max-width: 100%;
+  width: 100%;
 }
 
-.boxes-maniere-de-fonctionner {
-  display: flex;
-  justify-content: space-evenly;
-}
-.texte-motivations {
-  display: flex;
+.texte-motivation {
+  display:flex;
+  font-size: 1.2rem;
+  margin: 0 auto;
   white-space: pre; /*Garde les sauts de ligne de l'html*/
 }
 
+
 .maniere-de-fonctionner {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  font-size: 1.2rem;
   max-width: 100%;
-
-
 }
 
-.entretien,
-.plan,
-.premier-jet,
-.modifications,
-.finalisation {
-  display: flex;
+.etapes {
+  display: grid;
+  grid-template-columns: 1fr; /* une seule colonne */
+  grid-template-rows: 0.5fr 0.65fr 1fr;
   justify-items: center; /* centre le contenu horizontalement */
   align-items: center;   /* centre le contenu verticalement */
   background-color: white;
   opacity: 0.8;
   border-radius: 10px;
   box-shadow: 0 4px 6px var(--lila-trèsfoncé);
-  width: 13%;
-  height: 65%;
+  flex: 0 0 100%;                  /* une seule étape visible à la fois */
+  scroll-snap-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+}
+
+.point {
+  justify-self: left;
+  font-size: 4rem;
+}
+
+.titre-fonctionnement {
+  justify-self: center;
+  margin: 0.5rem;
+  text-decoration: dotted underline;
+  font-size: 2rem;
+}
+
+.description-fonctionnement {
+  justify-self: center;
+  font-size: 1.2rem;
+}
+
+.boxes-maniere-de-fonctionner {
+  display: flex;
+  margin: 0 auto;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 500px;
+  height: 350px;
+  border: 2px solid var(--lila-trèsfoncé);
+  border-radius: 16px;
+  overflow-x: auto;
+  scroll-snap-type: X mandatory;
+  scroll-behavior: smooth;
+}
+
+.boxes-maniere-de-fonctionner::-webkit-scrollbar {
+  width: 20px;
+  height: 20px; 
+}
+
+.boxes-maniere-de-fonctionner::-webkit-scrollbar-thumb {
+  background-color: var(--lila-trèstrèsfoncé);
+  border-radius: 10px;
+}
+
+.boxes-maniere-de-fonctionner::-webkit-scrollbar-track {
+  background-color: white;
+  border-radius: 10px;
 }
