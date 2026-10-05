@@ -424,6 +424,10 @@ header {
   max-width: 100%;
 }
 
+.titre-maniere-de-fonctionner {
+  margin-left: 3.5rem;
+}
+
 .etapes {
   display: grid;
   grid-template-columns: 1fr; /* une seule colonne */
